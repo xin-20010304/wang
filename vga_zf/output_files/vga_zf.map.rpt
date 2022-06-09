@@ -1,0 +1,424 @@
+Analysis & Synthesis report for vga_zf
+Tue Jun 07 22:24:16 2022
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: Top-level Entity: |vga_zf
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Jun 07 22:24:16 2022       ;
+; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                      ; vga_zf                                      ;
+; Top-level Entity Name              ; vga_zf                                      ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 392                                         ;
+;     Total combinational functions  ; 389                                         ;
+;     Dedicated logic registers      ; 59                                          ;
+; Total registers                    ; 59                                          ;
+; Total pins                         ; 30                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                            ; vga_zf             ; vga_zf             ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 6           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-6         ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                     ;
++----------------------------------+-----------------+------------------------------+------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path ; Library ;
++----------------------------------+-----------------+------------------------------+------------------------------+---------+
+; vga_zf.v                         ; yes             ; Auto-Found Verilog HDL File  ; E:/FPGA/VGA/vga_zf/vga_zf.v  ;         ;
++----------------------------------+-----------------+------------------------------+------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 392         ;
+;                                             ;             ;
+; Total combinational functions               ; 389         ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 271         ;
+;     -- 3 input functions                    ; 49          ;
+;     -- <=2 input functions                  ; 69          ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 349         ;
+;     -- arithmetic mode                      ; 40          ;
+;                                             ;             ;
+; Total registers                             ; 59          ;
+;     -- Dedicated logic registers            ; 59          ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 30          ;
+;                                             ;             ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; char_bit[4] ;
+; Maximum fan-out                             ; 113         ;
+; Total fan-out                               ; 1577        ;
+; Average fan-out                             ; 3.10        ;
++---------------------------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; |vga_zf                    ; 389 (389)           ; 59 (59)                   ; 0           ; 0            ; 0       ; 0         ; 30   ; 0            ; |vga_zf             ; vga_zf      ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; vga_rgb[0..19]                         ; Stuck at GND due to stuck port data_in ;
+; char_bit[8]                            ; Lost fanout                            ;
+; Total Number of Removed Registers = 21 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 59    ;
+; Number of registers using Synchronous Clear  ; 37    ;
+; Number of registers using Synchronous Load   ; 8     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 8     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |vga_zf|char_bit[6]        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |vga_zf                                                                                                                                                                                                                              ;
++----------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+; Parameter Name ; Value                                                                                                                                                                                                                                                            ; Type            ;
++----------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+; H_FRONT        ; 16                                                                                                                                                                                                                                                               ; Signed Integer  ;
+; H_SYNC         ; 96                                                                                                                                                                                                                                                               ; Signed Integer  ;
+; H_BACK         ; 48                                                                                                                                                                                                                                                               ; Signed Integer  ;
+; H_ACT          ; 640                                                                                                                                                                                                                                                              ; Signed Integer  ;
+; H_BLANK        ; 160                                                                                                                                                                                                                                                              ; Signed Integer  ;
+; H_TOTAL        ; 800                                                                                                                                                                                                                                                              ; Signed Integer  ;
+; V_FRONT        ; 11                                                                                                                                                                                                                                                               ; Signed Integer  ;
+; V_SYNC         ; 2                                                                                                                                                                                                                                                                ; Signed Integer  ;
+; V_BACK         ; 31                                                                                                                                                                                                                                                               ; Signed Integer  ;
+; V_ACT          ; 480                                                                                                                                                                                                                                                              ; Signed Integer  ;
+; V_BLANK        ; 44                                                                                                                                                                                                                                                               ; Signed Integer  ;
+; V_TOTAL        ; 524                                                                                                                                                                                                                                                              ; Signed Integer  ;
+; char_line00    ; 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 ; Unsigned Binary ;
+; char_line01    ; 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011110000000000000000000000000000000000000000000000000000000001100000000000000000000000000000000000 ; Unsigned Binary ;
+; char_line02    ; 0000000000000000000000000000110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011111000000000000000000000000000000000000000000000000000000000011100000000000000000000000000000000 ; Unsigned Binary ;
+; char_line03    ; 0000000000000000000000000000011110000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000011110000000000000000000000000000000000000000000000000000000000001111000000000000000000000000000000 ; Unsigned Binary ;
+; char_line04    ; 0000000000000000000000000000001111000000000000000000000000000000000000000000000000000000000000000000000000000000001111100000000000000000000000000000000000000011110000000000000000000000000000000000000000000000000000000000001111100000000000000000000000000000 ; Unsigned Binary ;
+; char_line05    ; 0000000000000000000000000000000111100000000000000000000000000000000000001111111111111111111111111111111111111111111111111000000000000000000000000000000000000011110000000000000000000000000000000000000000000000000000000000000111100000000000000000000000000000 ; Unsigned Binary ;
+; char_line06    ; 0000000000000000000000000000000111000000000000000000001100000000000000000000000000000000000000111100000000000000000000000000000000000000000000000000000000000011110000000000000000011100000000000000000000000000000000000000000010000000000000000000011110000000 ; Unsigned Binary ;
+; char_line07    ; 0000000000000000000000000000000000000000000000000000111111000000000000000000000000000000000000111100000000000000000000000000000000000001111111111111111111111111111111111111111111111111000000000000111111111111111111111111111111111111111111111111111111100000 ; Unsigned Binary ;
+; char_line08    ; 0000011111111111111111111111111111111111111111111111111111110000000000000000000000000000000000111100000000000000000000000000000000000000011000000000000000000011110000000000000000000000000000000000001100000000000010000000000000000000011110000000000000000000 ; Unsigned Binary ;
+; char_line09    ; 0000000000000000000010000000000000000000011110000000000000000000000000000000000000000000000000111100000000000000000000000000000000000000000000000000000000000011110000000000000000000000000000000000000000000000000011000000000000000000111100000000000000000000 ; Unsigned Binary ;
+; char_line0a    ; 0000000000000000000011000000000000000000111100000000000000000000000000000000000000000000000000111100000000000000000000000000000000000000000000000000000000000011110000000000000000000000000000000000000000000000000011000000000000000000111100000000000000000000 ; Unsigned Binary ;
+; char_line0b    ; 0000000000000000000001100000000000000000111100000000000000000000000000000000000000000000000000111100000000000000000000000000000000000000000000000000000000000011110000000000000000000000000000000000000000000000000001100000000000000000111100000000000000000000 ; Unsigned Binary ;
+; char_line0c    ; 0000000000000000000001100000000000000001111000000000000000000000000000000000000000000000000000111100000000000000000000000000000000000000000000000000000000000011110000000000000000000000000000000000000000000000000001110000000000000001111000000000000000000000 ; Unsigned Binary ;
+; char_line0d    ; 0000000000000000000000110000000000000001111000000000000000000000000000000000000000000000000000111100000000000000000000000000000000000000000000000000000000000011110000000000000111000000000000000000000000000000000000110000000000000011110000000000000000000000 ; Unsigned Binary ;
+; char_line0e    ; 0000000000000000000000111000000000000011110000000000000000000000000000000000000000000000000000111100000000000000000000000000000000000000000011111111111111111111111111111111111111110000000000000000000000000000000000011000000000000011110000000000000000000000 ; Unsigned Binary ;
+; char_line0f    ; 0000000000000000000000011100000000000111100000000000000000000000000000000000000000000000000000111100000000000000111100000000000000000000000000110000000000000000000000000000000000000000000000000000000000000000000000011100000000000111100000000000000000000000 ; Unsigned Binary ;
+; char_line10    ; 0000000000000000000000001100000000001111100000000000000000000000000000000001111111111111111111111111111111111111111111000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000001110000000001111000000000000000000000000 ; Unsigned Binary ;
+; char_line11    ; 0000000000000000000000000110000000001111000000000000000000000000000000000000000000000000000000111100000000000000000000000000000000000000000000000000000000011110000000000000000000000000000000000000000000000000000000000111000000011110000000000000000000000000 ; Unsigned Binary ;
+; char_line12    ; 0000000000000000000000000111100000011110000000000000000000000000000000000000000000000000000000111100000000000000000000000000000000000000000000000000000000000111110000000000000000000000000000000000000000000000000000000011100000111100000000000000000000000000 ; Unsigned Binary ;
+; char_line13    ; 0000000000000000000000000011110001111100000000000000000000000000000000000000000000000000000000111100000000000000000000000000000000000000000000000000000000000011111100000000000000000000000000000000000000000000000000000001111001111000000000000000000000000000 ; Unsigned Binary ;
+; char_line14    ; 0000000000000000000000000001111011111000000000000000000000000000000000000000000000000000000000111100000000000000000000000000000000000000000110000001111000000000111110000000000001100000000000000000000000000000000000000000111111110000000000000000000000000000 ; Unsigned Binary ;
+; char_line15    ; 0000000000000000000000000000011111100000000000000000000000000000000000000000000000000000000000111100000000000000000000000000000000000000000110000001111000000000011100000000000000111100000000000000000000000000000000000000011111100000000000000000000000000000 ; Unsigned Binary ;
+; char_line16    ; 0000000000000000000000000000001111000000000000000000000000000000000000000000000000000000000000111100000000000000000000000000000000000000001100000001111000000000001000000000010000001111100000000000000000000000000000000000011111100000000000000000000000000000 ; Unsigned Binary ;
+; char_line17    ; 0000000000000000000000000000111111110000000000000000000000000000000000000000000000000000000000111100000000000000000000000000000000000000011100000001111000000000000000000000010000000111111000000000000000000000000000000001111011111100000000000000000000000000 ; Unsigned Binary ;
+; char_line18    ; 0000000000000000000000000111110001111110000000000000000000000000000000000000000000000000000000111100000000000000000000000000000000000001111100000001111000000000000000000000110000000011111000000000000000000000000000001111100000111111100000000000000000000000 ; Unsigned Binary ;
+; char_line19    ; 0000000000000000000000011111000000011111111000000000000000000000000000000000000000000000000000111100000000000000000000000000000000000111111000000001111000000000000000000000111000000001111000000000000000000000000001111100000000000111111110000000000000000000 ; Unsigned Binary ;
+; char_line1a    ; 0000000000000000000011111000000000000011111111100000000000000000000000000000000000000000000000111100000000000000000000111000000000000111110000000001111000000000000000000001111100000000110000000000000000000000001111100000000000000000111111111110000000000000 ; Unsigned Binary ;
+; char_line1b    ; 0000000000000000011110000000000000000000011111111111111000000000000111111111111111111111111111111111111111111111111111111110000000000000000000000001111111111111111111111111111110000000000000000000000000000001111000000000000000000000000111111111111111110000 ; Unsigned Binary ;
+; char_line1c    ; 0000000000000111100000000000000000000000000001111111111111100000000001000000000000000000000000000000000000000000000000000000000000000000000000000000011111111111111111111111110000000000000000000000000000011110000000000000000000000000000000001111111110000000 ; Unsigned Binary ;
+; char_line1d    ; 0000000011111000000000000000000000000000000000000011111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011110000000000000000000000000000000000000000000011000000000 ; Unsigned Binary ;
+; char_line1e    ; 0001110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 ; Unsigned Binary ;
+; char_line1f    ; 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 ; Unsigned Binary ;
++----------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 30                          ;
+; cycloneiii_ff         ; 59                          ;
+;     ENA SLD           ; 8                           ;
+;     SCLR              ; 37                          ;
+;     plain             ; 14                          ;
+; cycloneiii_lcell_comb ; 391                         ;
+;     arith             ; 40                          ;
+;         2 data inputs ; 40                          ;
+;     normal            ; 351                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 8                           ;
+;         2 data inputs ; 22                          ;
+;         3 data inputs ; 49                          ;
+;         4 data inputs ; 271                         ;
+;                       ;                             ;
+; Max LUT depth         ; 9.00                        ;
+; Average LUT depth     ; 5.84                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Tue Jun 07 22:24:02 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off vga_zf -c vga_zf
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Warning (10229): Verilog HDL Expression warning at vga_zf.v(91): truncated literal to match 256 bits File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 91
+Warning (10229): Verilog HDL Expression warning at vga_zf.v(92): truncated literal to match 256 bits File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 92
+Warning (10229): Verilog HDL Expression warning at vga_zf.v(93): truncated literal to match 256 bits File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 93
+Warning (10229): Verilog HDL Expression warning at vga_zf.v(94): truncated literal to match 256 bits File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 94
+Warning (10229): Verilog HDL Expression warning at vga_zf.v(95): truncated literal to match 256 bits File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 95
+Warning (10229): Verilog HDL Expression warning at vga_zf.v(96): truncated literal to match 256 bits File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 96
+Warning (10229): Verilog HDL Expression warning at vga_zf.v(97): truncated literal to match 256 bits File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 97
+Warning (10229): Verilog HDL Expression warning at vga_zf.v(98): truncated literal to match 256 bits File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 98
+Warning (10229): Verilog HDL Expression warning at vga_zf.v(99): truncated literal to match 256 bits File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 99
+Warning (10229): Verilog HDL Expression warning at vga_zf.v(100): truncated literal to match 256 bits File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 100
+Warning (10229): Verilog HDL Expression warning at vga_zf.v(101): truncated literal to match 256 bits File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 101
+Warning (10229): Verilog HDL Expression warning at vga_zf.v(102): truncated literal to match 256 bits File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 102
+Warning (10229): Verilog HDL Expression warning at vga_zf.v(103): truncated literal to match 256 bits File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 103
+Warning (10229): Verilog HDL Expression warning at vga_zf.v(104): truncated literal to match 256 bits File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 104
+Warning (10229): Verilog HDL Expression warning at vga_zf.v(105): truncated literal to match 256 bits File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 105
+Warning (10229): Verilog HDL Expression warning at vga_zf.v(106): truncated literal to match 256 bits File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 106
+Warning (10229): Verilog HDL Expression warning at vga_zf.v(107): truncated literal to match 256 bits File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 107
+Warning (10229): Verilog HDL Expression warning at vga_zf.v(108): truncated literal to match 256 bits File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 108
+Warning (10229): Verilog HDL Expression warning at vga_zf.v(109): truncated literal to match 256 bits File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 109
+Warning (10229): Verilog HDL Expression warning at vga_zf.v(110): truncated literal to match 256 bits File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 110
+Warning (10229): Verilog HDL Expression warning at vga_zf.v(111): truncated literal to match 256 bits File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 111
+Warning (10229): Verilog HDL Expression warning at vga_zf.v(112): truncated literal to match 256 bits File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 112
+Warning (10229): Verilog HDL Expression warning at vga_zf.v(113): truncated literal to match 256 bits File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 113
+Warning (10229): Verilog HDL Expression warning at vga_zf.v(114): truncated literal to match 256 bits File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 114
+Warning (10229): Verilog HDL Expression warning at vga_zf.v(115): truncated literal to match 256 bits File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 115
+Warning (10229): Verilog HDL Expression warning at vga_zf.v(116): truncated literal to match 256 bits File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 116
+Warning (10229): Verilog HDL Expression warning at vga_zf.v(117): truncated literal to match 256 bits File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 117
+Warning (10229): Verilog HDL Expression warning at vga_zf.v(118): truncated literal to match 256 bits File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 118
+Warning (12125): Using design file vga_zf.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: vga_zf File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at vga_zf.v(43): created implicit net for "CLK_to_DAC" File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 43
+Info (12127): Elaborating entity "vga_zf" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at vga_zf.v(83): object "valid" assigned a value but never read File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 83
+Warning (10036): Verilog HDL or VHDL warning at vga_zf.v(84): object "x_dis" assigned a value but never read File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 84
+Warning (10036): Verilog HDL or VHDL warning at vga_zf.v(85): object "y_dis" assigned a value but never read File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 85
+Warning (10230): Verilog HDL assignment warning at vga_zf.v(54): truncated value with size 32 to match size of target (11) File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 54
+Warning (10230): Verilog HDL assignment warning at vga_zf.v(67): truncated value with size 32 to match size of target (11) File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 67
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "VGA_SYNC" is stuck at GND File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 12
+    Warning (13410): Pin "VGA_R[0]" is stuck at GND File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 13
+    Warning (13410): Pin "VGA_R[1]" is stuck at GND File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 13
+    Warning (13410): Pin "VGA_R[2]" is stuck at GND File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 13
+    Warning (13410): Pin "VGA_R[3]" is stuck at GND File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 13
+    Warning (13410): Pin "VGA_B[0]" is stuck at GND File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 13
+    Warning (13410): Pin "VGA_B[1]" is stuck at GND File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 13
+    Warning (13410): Pin "VGA_B[2]" is stuck at GND File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 13
+    Warning (13410): Pin "VGA_B[3]" is stuck at GND File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 13
+    Warning (13410): Pin "VGA_B[4]" is stuck at GND File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 13
+    Warning (13410): Pin "VGA_B[5]" is stuck at GND File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 13
+    Warning (13410): Pin "VGA_B[6]" is stuck at GND File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 13
+    Warning (13410): Pin "VGA_B[7]" is stuck at GND File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 13
+    Warning (13410): Pin "VGA_G[0]" is stuck at GND File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 13
+    Warning (13410): Pin "VGA_G[1]" is stuck at GND File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 13
+    Warning (13410): Pin "VGA_G[2]" is stuck at GND File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 13
+    Warning (13410): Pin "VGA_G[3]" is stuck at GND File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 13
+    Warning (13410): Pin "VGA_G[4]" is stuck at GND File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 13
+    Warning (13410): Pin "VGA_G[5]" is stuck at GND File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 13
+    Warning (13410): Pin "VGA_G[6]" is stuck at GND File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 13
+    Warning (13410): Pin "VGA_G[7]" is stuck at GND File: E:/FPGA/VGA/vga_zf/vga_zf.v Line: 13
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 1 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 423 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 1 input pins
+    Info (21059): Implemented 29 output pins
+    Info (21061): Implemented 393 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 58 warnings
+    Info: Peak virtual memory: 4788 megabytes
+    Info: Processing ended: Tue Jun 07 22:24:16 2022
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:22
+
+
